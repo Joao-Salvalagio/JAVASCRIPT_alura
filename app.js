@@ -3,19 +3,26 @@ alert('Boas vindas ao jogo do número secreto!');
 //Número secreto que o usuário deve adivinhar
 let numeroSecreto = 29;
 //Solicita ao usuário que digite um número entre 1 e 30
-let tentativa = prompt('Digite um número entre 1 e 30:');
+let tentativa = -1;
+//Numero de tentativas
+let tentativas = 1;
 
-//SE
-//SUCESSO: se a tentativa for igual ao número secreto, exibe uma mensagem de sucesso
-if (tentativa == numeroSecreto) {
-    //Exibe uma mensagem de sucesso se o usuário acertar o número secreto
-    alert('Parabéns, você acertou!');
-}
-//SENÃO
-//ERRO: se a tentativa nao for igual ao número secreto, exibe uma mensagem de erro
-else{
-    //Exibe uma mensagem de erro informando o número secreto se o usuário errar
-    alert('Que pena, você errou! O número secreto era ' + numeroSecreto + '.');
-    //alert(`Que pena, você errou! O número secreto era ${numeroSecreto}.`); também é válido
-    //alert("Que pena, você errou! O número secreto era " + numeroSecreto + "."); também é válido
+//ENQUANTO
+while(tentativa != numeroSecreto){
+    tentativa = prompt('Digite um número entre 1 e 30:');
+    //SE
+    if (tentativa == numeroSecreto) {
+        //Exibe uma mensagem de sucesso se o usuário acertar o número secreto
+        alert('Parabéns, você acertou! Número de tentativas: ' + tentativas);
+    }
+    //SENÃO
+    else{
+        if (numeroSecreto > tentativa) {
+            alert('O número secreto é maior que ' + tentativa + '. Tente novamente!');
+            //ex: alert(`Que pena, você errou! O número secreto era ${numeroSecreto}.`); também é válido
+        }else{
+            alert('O número secreto é menor que ' + tentativa + '. Tente novamente!');
+        }
+        tentativas++; //acrescenta +1 nas tentativas
+    }
 }
