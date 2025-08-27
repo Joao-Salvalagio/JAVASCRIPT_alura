@@ -1,15 +1,17 @@
 //Exibe uma mensagem de boas-vindas ao usuário
 alert('Boas vindas ao jogo do número secreto!');
+//Definicão do número máximo
+let numeroMaximo = 1000;
 //Número secreto que o usuário deve adivinhar
-let numeroSecreto = parseInt(Math.random() * 100 + 1);
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
 //Solicita ao usuário que digite um número entre 1 e 30
-let tentativa = -1;
+let tentativa;
 //Numero de tentativas
 let tentativas = 1;
 
 //ENQUANTO
 while(tentativa != numeroSecreto){
-    tentativa = prompt('Digite um número entre 1 e 100:');
+    tentativa = prompt('Digite um número entre 1 e ' + numeroMaximo + ':');
     //SE
     if (tentativa == numeroSecreto) {
         break;
